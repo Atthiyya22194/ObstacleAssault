@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Math/TransformCalculus3D.h"
 #include "MovingPlatformer.generated.h"
 
 UCLASS()
@@ -22,7 +23,12 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	
+	FVector StartLocation = FVector();
 
 	UPROPERTY(EditAnywhere, Category="Moving Platform");
 	FVector PlatformVelocity = FVector(100, 0, 0);
+	
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	float MoveDistance = 100;
 };
